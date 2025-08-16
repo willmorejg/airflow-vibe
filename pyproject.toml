@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+
+[project]
+name = "airflow_vibe"
+version = "0.1.0"
+description = "Airflow DAG to consume CSV and persist to DuckDB"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+dependencies = [
+    "apache-airflow",
+    "duckdb",
+    "pandas"
+]
+
+[project.optional-dependencies]
+development = [
+    "bumpver",
+    "isort",
+    "autoflake",
+    "black"
+]
