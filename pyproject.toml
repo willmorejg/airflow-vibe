@@ -11,7 +11,8 @@ authors = [
 dependencies = [
     "apache-airflow",
     "duckdb",
-    "pandas"
+    "pandas",
+    "setuptools"
 ]
 
 [project.optional-dependencies]

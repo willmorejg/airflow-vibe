@@ -41,6 +41,18 @@ class BlackCommand(Command):
     def run(self):
         subprocess.run(['black', DAG_FILE], check=True)
 
+# Custom command to run pytest
+class PyTestCommand(Command):
+    description = 'Run tests using pytest.'
+    user_options = []
+    def initialize_options(self):
+        pass
+    def finalize_options(self):
+        pass
+    def run(self):
+        errno = subprocess.call(['pytest', 'tests'])
+        raise SystemExit(errno)
+
 class BumpverCommand(Command):
     description = 'Bump version using bumpver.'
     user_options = []
@@ -71,5 +83,6 @@ setup(
         'autoflake': AutoflakeCommand,
         'black': BlackCommand,
         'bumpver': BumpverCommand,
+        'test': PyTestCommand,
     },
 )
