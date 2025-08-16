@@ -19,5 +19,6 @@ development = [
     "bumpver",
     "isort",
     "autoflake",
-    "black"
+    "black",
+    "pytest"
 ]
